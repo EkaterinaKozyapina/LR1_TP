@@ -23,6 +23,9 @@ public:
 	// Извлечение количества псевдонимов
 	int getAliases();
 
+	// Вывод в консоль
+	void out();
+
 private:
 
 	int aliases;				// Количество псевдонимов

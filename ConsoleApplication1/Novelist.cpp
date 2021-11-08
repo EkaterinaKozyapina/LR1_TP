@@ -1,23 +1,22 @@
 #include "Novelist.h"
 
-Novelist::Novelist() {
+Novelist::Novelist() : Publication() {
 	biography = "";
 
 	cout << "\t\tКласс Novelist: конструктор без параметров" << endl;
 }
 
-Novelist::Novelist(string fio, int yearOfBird, int yearOfDeath, vector<string> works, string biography) {
-	this->biography = biography;
+Novelist::Novelist(string fio, int yearOfBird, int yearOfDeath, vector<string> works, string biography) : Publication(fio, yearOfBird, yearOfDeath, works) {
+	setBiography(biography);
 
 	cout << "\t\tКласс Novelist: конструктор с параметрами" << endl;
 }
 
 Novelist::Novelist(const Novelist & novelist) {
-	fio = novelist.fio;
-	yearOfBird = novelist.yearOfBird;
-	yearOfDeath = novelist.yearOfDeath;
-	works = novelist.works;
-	biography = novelist.biography;
+	setFio(novelist.fio);
+	setYears(novelist.yearOfBird, novelist.yearOfDeath);
+	setWorks(novelist.works);
+	setBiography(novelist.biography);
 
 	cout << "\t\tКласс Novelist: конструктор копирования" << endl;
 }
@@ -31,3 +30,11 @@ Novelist::~Novelist() {
 void Novelist::setBiography(string biography) { this->biography = biography; }
 
 string Novelist::getBiography() { return biography; }
+
+void Novelist::out() {
+	cout << "Романист - ";
+	cout << fio << " (" << getYears() << "); " << endl << "\tБиография: " << biography << endl;
+	cout << "\tОсновные произведения: " << endl;
+	for (int i = 0; i < works.size(); i++)
+		cout << "\t\t" << i + 1 << ": " << "\"" << works[i] << "\"" << endl;
+}

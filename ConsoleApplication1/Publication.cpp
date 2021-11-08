@@ -10,19 +10,17 @@ Publication::Publication() {
 }
 
 Publication::Publication(string fio, int yearOfBird, int yearOfDeath, vector<string> works) {
-	this->fio = fio;
-	this->yearOfBird = yearOfBird;
-	this->yearOfDeath = yearOfDeath;
-	this->works = works;
+	setFio(fio);
+	setYears(yearOfBird, yearOfDeath);
+	setWorks(works);
 
 	cout << "\t\tКласс Publication: конструктор с параметрами" << endl;
 }
 
 Publication::Publication(const Publication & publication) {
-	fio = publication.fio;
-	yearOfBird = publication.yearOfBird;
-	yearOfDeath = publication.yearOfDeath;
-	works = publication.works;
+	setFio(publication.fio);
+	setYears(publication.yearOfBird, publication.yearOfDeath);
+	setWorks(publication.works);
 
 	cout << "\t\tКласс Publication: конструктор копирования" << endl;
 }
@@ -38,11 +36,15 @@ Publication::~Publication() {
 	cout << "\t\tКласс Publication: деструктор" << endl;
 }
 
-void Publication::setFio(string fio) { this->fio = fio; }
+void Publication::setFio(string fio) { 
+	this->fio = fio; 
+}
 
 string Publication::getFio() { return fio; }
 
 void Publication::setYears(int yearOfBird, int yearOfDeath) {
+	if (yearOfBird < 1000 || yearOfDeath < 1000 || yearOfBird > 2021 || yearOfDeath > 2021 || yearOfBird >= yearOfDeath)
+		throw exception("Неверные года");
 	this->yearOfBird = yearOfBird;
 	this->yearOfDeath = yearOfDeath;
 }

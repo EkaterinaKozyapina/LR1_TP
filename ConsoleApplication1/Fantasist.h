@@ -22,6 +22,9 @@ public:
 	// Извлечение краткой биографии
 	bool getFilmExists();
 
+	// Вывод в консоль
+	void out();
+
 private:
 
 	bool filmExists;			// Сняты ли фильмы по книгам

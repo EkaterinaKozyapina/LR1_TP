@@ -7,17 +7,16 @@ Poet::Poet() : Publication() {
 }
 
 Poet::Poet(string fio, int yearOfBird, int yearOfDeath, vector<string> works, int aliases) : Publication(fio, yearOfBird, yearOfDeath, works) {
-	this->aliases = aliases;
+	setAliases(aliases);
 
 	cout << "\t\tКласс Poet: конструктор с параметрами" << endl;
 }
 
 Poet::Poet(const Poet & poet) {
-	fio = poet.fio;
-	yearOfBird = poet.yearOfBird;
-	yearOfDeath = poet.yearOfDeath;
-	works = poet.works;
-	aliases = poet.aliases;
+	setFio(poet.fio);
+	setYears(poet.yearOfBird, poet.yearOfDeath);
+	setWorks(poet.works);
+	setAliases(poet.aliases);
 
 	cout << "\t\tКласс Poet: конструктор копирования" << endl;
 }
@@ -28,6 +27,18 @@ Poet::~Poet() {
 	cout << "\t\tКласс Poet: деструктор" << endl;
 }
 
-void Poet::setAliases(int aliases) { this->aliases = aliases; }
+void Poet::setAliases(int aliases) { 
+	if (aliases < 0)
+		throw exception("Неверное количество псевдонимов");
+	this->aliases = aliases; 
+}
 
 int Poet::getAliases() { return aliases; }
+
+void Poet::out() {
+	cout << "Поэт - ";
+	cout << fio << " (" << getYears() << "); " << "псевдонимы: " << aliases << endl;
+	cout << "\tОсновные произведения: " << endl;
+	for (int i = 0; i < works.size(); i++)
+		cout << "\t\t" << i + 1 << ": " << "\"" << works[i] << "\"" << endl;
+}

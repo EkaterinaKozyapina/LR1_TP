@@ -23,6 +23,9 @@ public:
 	// Извлечение краткой биографии
 	string getBiography();
 
+	// Вывод в консоль
+	void out();
+
 private:
 
 	string biography;				// Краткая биография

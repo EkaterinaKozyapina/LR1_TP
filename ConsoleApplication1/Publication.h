@@ -40,6 +40,9 @@ public:
 	// Извлечение основных работ
 	vector<string> getWorks();
 
+	// Виртуальная функция для вывода объектов
+	virtual void out() = 0;
+
 protected:
 
 	string fio;						// ФИО
