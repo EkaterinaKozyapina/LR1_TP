@@ -9,6 +9,8 @@ Keeper::Keeper() {
 }
 
 Keeper::Keeper(int size) {
+	if (size <= 0)
+		throw exception("Количество элементов контейнера не верно");
 	this->size = size;
 	conteiner = new Publication*[size];
 	index = 0;
@@ -45,11 +47,14 @@ void Keeper::extractFromFile() {
 
 std::ostream& operator<< (std::ostream &out, const Keeper & keeper)
 {
-	for (int i = 0; i < keeper.index; i++)
-	{
-		out << i + 1 << " ";
-		keeper.conteiner[i]->out();
-	}
+	if (keeper.index == 0)
+		out << "Контейнер пуст" << endl;
+	else
+		for (int i = 0; i < keeper.index; i++)
+		{
+			out << i + 1 << " ";
+			keeper.conteiner[i]->out();
+		}
 
 	return out;
 }
