@@ -153,12 +153,14 @@
   <ItemGroup>
     <ClCompile Include="ConsoleApplication1.cpp" />
     <ClCompile Include="Fantasist.cpp" />
+    <ClCompile Include="Keeper.cpp" />
     <ClCompile Include="Novelist.cpp" />
     <ClCompile Include="Poet.cpp" />
     <ClCompile Include="Publication.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Fantasist.h" />
+    <ClInclude Include="Keeper.h" />
     <ClInclude Include="Novelist.h" />
     <ClInclude Include="Poet.h" />
     <ClInclude Include="Publication.h" />
