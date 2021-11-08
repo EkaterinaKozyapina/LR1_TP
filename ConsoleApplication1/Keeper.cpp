@@ -45,8 +45,11 @@ void Keeper::extractFromFile() {
 
 std::ostream& operator<< (std::ostream &out, const Keeper & keeper)
 {
-
-	out << endl;
+	for (int i = 0; i < keeper.index; i++)
+	{
+		out << i + 1 << " ";
+		keeper.conteiner[i]->out();
+	}
 
 	return out;
 }

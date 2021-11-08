@@ -1,5 +1,8 @@
 #pragma once
 #include "Publication.h"
+#include "Poet.h"
+#include "Novelist.h"
+#include "Fantasist.h"
 
 class Keeper
 {
