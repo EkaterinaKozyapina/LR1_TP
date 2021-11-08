@@ -1,11 +1,11 @@
-#include "Keeper.h"
+ï»¿#include "Keeper.h"
 
 Keeper::Keeper() {
 	size = 0;
 	index = 0;
 	conteiner = nullptr;
 
-	cout << "\t\tÊëàññ Keeper: êîíñòðóêòîð áåç ïàðàìåòðîâ" << endl;
+	cout << "\t\tÐšÐ»Ð°ÑÑ Keeper: ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Ð±ÐµÐ· Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð¾Ð²" << endl;
 }
 
 Keeper::Keeper(int size) {
@@ -13,7 +13,7 @@ Keeper::Keeper(int size) {
 	conteiner = new Publication*[size];
 	index = 0;
 
-	cout << "\t\tÊëàññ Keeper: êîíñòðóêòîð ñ ïàðàìåòðàìè" << endl;
+	cout << "\t\tÐšÐ»Ð°ÑÑ Keeper: ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Ñ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð°Ð¼Ð¸" << endl;
 }
 
 Keeper::Keeper(const Keeper & keeper) {
@@ -21,7 +21,7 @@ Keeper::Keeper(const Keeper & keeper) {
 	for (int i = 0; i < keeper.index; i++)
 		addObject(*keeper.conteiner[i]);
 
-	cout << "\t\tÊëàññ Keeper: êîíñòðóêòîð êîïèðîâàíèÿ" << endl;
+	cout << "\t\tÐšÐ»Ð°ÑÑ Keeper: ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ ÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ñ" << endl;
 }
 
 Keeper::~Keeper() {
@@ -32,7 +32,7 @@ Keeper::~Keeper() {
 	index = 0;
 	conteiner = nullptr;
 
-	cout << "\t\tÊëàññ Keeper: äåñòðóêòîð" << endl;
+	cout << "\t\tÐšÐ»Ð°ÑÑ Keeper: Ð´ÐµÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€" << endl;
 }
 
 void Keeper::saveToFile() {
@@ -56,14 +56,14 @@ std::ostream& operator<< (std::ostream &out, const Keeper & keeper)
 
 void Keeper::addObject(Publication & publication) {
 	if (index == size)
-		throw exception("Êîíòåéíåð çàïîëíåí, äîáàâëåíèå îáúåêòà íåâîçìîæíî");
+		throw exception("ÐšÐ¾Ð½Ñ‚ÐµÐ¹Ð½ÐµÑ€ Ð·Ð°Ð¿Ð¾Ð»Ð½ÐµÐ½, Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸Ðµ Ð¾Ð±ÑŠÐµÐºÑ‚Ð° Ð½ÐµÐ²Ð¾Ð·Ð¼Ð¾Ð¶Ð½Ð¾");
 	conteiner[index] = &publication;
 	index++;
 }
 
 void Keeper::removeObject() {
 	if (index == 0)
-		throw exception("Êîíòåéíåð ïóñò, óäàëåíèå îáúåêòà íåâîçìîæíî");
+		throw exception("ÐšÐ¾Ð½Ñ‚ÐµÐ¹Ð½ÐµÑ€ Ð¿ÑƒÑÑ‚, ÑƒÐ´Ð°Ð»ÐµÐ½Ð¸Ðµ Ð¾Ð±ÑŠÐµÐºÑ‚Ð° Ð½ÐµÐ²Ð¾Ð·Ð¼Ð¾Ð¶Ð½Ð¾");
 	delete(conteiner[index - 1]);
 	index--;
 }

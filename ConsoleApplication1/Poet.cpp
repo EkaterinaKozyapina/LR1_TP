@@ -1,15 +1,15 @@
-#include "Poet.h"
+ï»¿#include "Poet.h"
 
 Poet::Poet() : Publication() {
 	aliases = 0;
 
-	cout << "\t\tÊëàññ Poet: êîíñòðóêòîð áåç ïàðàìåòðîâ" << endl;
+	cout << "\t\tÐšÐ»Ð°ÑÑ Poet: ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Ð±ÐµÐ· Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð¾Ð²" << endl;
 }
 
 Poet::Poet(string fio, int yearOfBird, int yearOfDeath, vector<string> works, int aliases) : Publication(fio, yearOfBird, yearOfDeath, works) {
 	setAliases(aliases);
 
-	cout << "\t\tÊëàññ Poet: êîíñòðóêòîð ñ ïàðàìåòðàìè" << endl;
+	cout << "\t\tÐšÐ»Ð°ÑÑ Poet: ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Ñ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð°Ð¼Ð¸" << endl;
 }
 
 Poet::Poet(const Poet & poet) {
@@ -18,27 +18,27 @@ Poet::Poet(const Poet & poet) {
 	setWorks(poet.works);
 	setAliases(poet.aliases);
 
-	cout << "\t\tÊëàññ Poet: êîíñòðóêòîð êîïèðîâàíèÿ" << endl;
+	cout << "\t\tÐšÐ»Ð°ÑÑ Poet: ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ ÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ñ" << endl;
 }
 
 Poet::~Poet() {
 	aliases = 0;
 
-	cout << "\t\tÊëàññ Poet: äåñòðóêòîð" << endl;
+	cout << "\t\tÐšÐ»Ð°ÑÑ Poet: Ð´ÐµÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€" << endl;
 }
 
 void Poet::setAliases(int aliases) { 
 	if (aliases < 0)
-		throw exception("Íåâåðíîå êîëè÷åñòâî ïñåâäîíèìîâ");
+		throw exception("ÐÐµÐ²ÐµÑ€Ð½Ð¾Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð¿ÑÐµÐ²Ð´Ð¾Ð½Ð¸Ð¼Ð¾Ð²");
 	this->aliases = aliases; 
 }
 
 int Poet::getAliases() { return aliases; }
 
 void Poet::out() {
-	cout << "Ïîýò - ";
-	cout << fio << " (" << getYears() << "); " << "ïñåâäîíèìû: " << aliases << endl;
-	cout << "\tÎñíîâíûå ïðîèçâåäåíèÿ: " << endl;
+	cout << "ÐŸÐ¾ÑÑ‚ - ";
+	cout << fio << " (" << getYears() << "); " << "Ð¿ÑÐµÐ²Ð´Ð¾Ð½Ð¸Ð¼Ñ‹: " << aliases << endl;
+	cout << "\tÐžÑÐ½Ð¾Ð²Ð½Ñ‹Ðµ Ð¿Ñ€Ð¾Ð¸Ð·Ð²ÐµÐ´ÐµÐ½Ð¸Ñ: " << endl;
 	for (int i = 0; i < works.size(); i++)
 		cout << "\t\t" << i + 1 << ": " << "\"" << works[i] << "\"" << endl;
 }

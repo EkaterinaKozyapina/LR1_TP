@@ -1,4 +1,4 @@
-#include "Publication.h"
+ï»¿#include "Publication.h"
 
 
 Publication::Publication() {
@@ -6,7 +6,7 @@ Publication::Publication() {
 	yearOfBird = 0;
 	yearOfDeath = 0;
 
-	cout << "\t\tÊëàññ Publication: êîíñòðóêòîð áåç ïàðàìåòðîâ" << endl;
+	cout << "\t\tÐšÐ»Ð°ÑÑ Publication: ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Ð±ÐµÐ· Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð¾Ð²" << endl;
 }
 
 Publication::Publication(string fio, int yearOfBird, int yearOfDeath, vector<string> works) {
@@ -14,7 +14,7 @@ Publication::Publication(string fio, int yearOfBird, int yearOfDeath, vector<str
 	setYears(yearOfBird, yearOfDeath);
 	setWorks(works);
 
-	cout << "\t\tÊëàññ Publication: êîíñòðóêòîð ñ ïàðàìåòðàìè" << endl;
+	cout << "\t\tÐšÐ»Ð°ÑÑ Publication: ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Ñ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð°Ð¼Ð¸" << endl;
 }
 
 Publication::Publication(const Publication & publication) {
@@ -22,7 +22,7 @@ Publication::Publication(const Publication & publication) {
 	setYears(publication.yearOfBird, publication.yearOfDeath);
 	setWorks(publication.works);
 
-	cout << "\t\tÊëàññ Publication: êîíñòðóêòîð êîïèðîâàíèÿ" << endl;
+	cout << "\t\tÐšÐ»Ð°ÑÑ Publication: ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ ÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ñ" << endl;
 }
 
 Publication::~Publication() {
@@ -33,7 +33,7 @@ Publication::~Publication() {
 	for (int i = 0; i < cnt; i++)
 		works.pop_back();
 
-	cout << "\t\tÊëàññ Publication: äåñòðóêòîð" << endl;
+	cout << "\t\tÐšÐ»Ð°ÑÑ Publication: Ð´ÐµÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€" << endl;
 }
 
 void Publication::setFio(string fio) { 
@@ -44,7 +44,7 @@ string Publication::getFio() { return fio; }
 
 void Publication::setYears(int yearOfBird, int yearOfDeath) {
 	if (yearOfBird < 1000 || yearOfDeath < 1000 || yearOfBird > 2021 || yearOfDeath > 2021 || yearOfBird >= yearOfDeath)
-		throw exception("Íåâåðíûå ãîäà");
+		throw exception("ÐÐµÐ²ÐµÑ€Ð½Ñ‹Ðµ Ð³Ð¾Ð´Ð°");
 	this->yearOfBird = yearOfBird;
 	this->yearOfDeath = yearOfDeath;
 }

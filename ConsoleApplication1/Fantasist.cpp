@@ -1,15 +1,15 @@
-#include "Fantasist.h"
+ï»¿#include "Fantasist.h"
 
 Fantasist::Fantasist() : Publication() {
 	filmExists = false;
 
-	cout << "\t\tÊëàññ Fantasist: êîíñòðóêòîð áåç ïàðàìåòðîâ" << endl;
+	cout << "\t\tÐšÐ»Ð°ÑÑ Fantasist: ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Ð±ÐµÐ· Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð¾Ð²" << endl;
 }
 
 Fantasist::Fantasist(string fio, int yearOfBird, int yearOfDeath, vector<string> works, bool filmExists) : Publication(fio, yearOfBird, yearOfDeath, works) {
 	setFilmExists(filmExists);
 
-	cout << "\t\tÊëàññ Fantasist: êîíñòðóêòîð ñ ïàðàìåòðàìè" << endl;
+	cout << "\t\tÐšÐ»Ð°ÑÑ Fantasist: ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Ñ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð°Ð¼Ð¸" << endl;
 }
 
 Fantasist::Fantasist(const Fantasist & fantasist) {
@@ -18,13 +18,13 @@ Fantasist::Fantasist(const Fantasist & fantasist) {
 	setWorks(fantasist.works);
 	setFilmExists(fantasist.filmExists);
 
-	cout << "\t\tÊëàññ Fantasist: êîíñòðóêòîð êîïèðîâàíèÿ" << endl;
+	cout << "\t\tÐšÐ»Ð°ÑÑ Fantasist: ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ ÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ñ" << endl;
 }
 
 Fantasist::~Fantasist() {
 	filmExists = false;
 
-	cout << "\t\tÊëàññ Fantasist: äåñòðóêòîð" << endl;
+	cout << "\t\tÐšÐ»Ð°ÑÑ Fantasist: Ð´ÐµÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€" << endl;
 }
 
 void Fantasist::setFilmExists(bool filmExists) { this->filmExists = filmExists; }
@@ -32,9 +32,9 @@ void Fantasist::setFilmExists(bool filmExists) { this->filmExists = filmExists; 
 bool Fantasist::getFilmExists() { return filmExists; }
 
 void Fantasist::out() {
-	cout << "Ôàíòàñò - ";
-	cout << fio << " (" << getYears() << "); " << "Ñíÿòû ëè ôèëüìû: " << ((filmExists)?"Äà":"Íåò") << endl;
-	cout << "\tÎñíîâíûå ïðîèçâåäåíèÿ: " << endl;
+	cout << "Ð¤Ð°Ð½Ñ‚Ð°ÑÑ‚ - ";
+	cout << fio << " (" << getYears() << "); " << "Ð¡Ð½ÑÑ‚Ñ‹ Ð»Ð¸ Ñ„Ð¸Ð»ÑŒÐ¼Ñ‹: " << ((filmExists)?"Ð”Ð°":"ÐÐµÑ‚") << endl;
+	cout << "\tÐžÑÐ½Ð¾Ð²Ð½Ñ‹Ðµ Ð¿Ñ€Ð¾Ð¸Ð·Ð²ÐµÐ´ÐµÐ½Ð¸Ñ: " << endl;
 	for (int i = 0; i < works.size(); i++)
 		cout << "\t\t" << i + 1 << ": " << "\"" << works[i] << "\"" << endl;
 }

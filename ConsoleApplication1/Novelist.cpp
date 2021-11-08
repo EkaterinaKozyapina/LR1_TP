@@ -1,15 +1,15 @@
-#include "Novelist.h"
+ï»¿#include "Novelist.h"
 
 Novelist::Novelist() : Publication() {
 	biography = "";
 
-	cout << "\t\tÊëàññ Novelist: êîíñòðóêòîð áåç ïàðàìåòðîâ" << endl;
+	cout << "\t\tÐšÐ»Ð°ÑÑ Novelist: ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Ð±ÐµÐ· Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð¾Ð²" << endl;
 }
 
 Novelist::Novelist(string fio, int yearOfBird, int yearOfDeath, vector<string> works, string biography) : Publication(fio, yearOfBird, yearOfDeath, works) {
 	setBiography(biography);
 
-	cout << "\t\tÊëàññ Novelist: êîíñòðóêòîð ñ ïàðàìåòðàìè" << endl;
+	cout << "\t\tÐšÐ»Ð°ÑÑ Novelist: ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Ñ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð°Ð¼Ð¸" << endl;
 }
 
 Novelist::Novelist(const Novelist & novelist) {
@@ -18,13 +18,13 @@ Novelist::Novelist(const Novelist & novelist) {
 	setWorks(novelist.works);
 	setBiography(novelist.biography);
 
-	cout << "\t\tÊëàññ Novelist: êîíñòðóêòîð êîïèðîâàíèÿ" << endl;
+	cout << "\t\tÐšÐ»Ð°ÑÑ Novelist: ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ ÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ñ" << endl;
 }
 
 Novelist::~Novelist() {
 	biography = "";
 
-	cout << "\t\tÊëàññ Novelist: äåñòðóêòîð" << endl;
+	cout << "\t\tÐšÐ»Ð°ÑÑ Novelist: Ð´ÐµÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€" << endl;
 }
 
 void Novelist::setBiography(string biography) { this->biography = biography; }
@@ -32,9 +32,9 @@ void Novelist::setBiography(string biography) { this->biography = biography; }
 string Novelist::getBiography() { return biography; }
 
 void Novelist::out() {
-	cout << "Ðîìàíèñò - ";
-	cout << fio << " (" << getYears() << "); " << endl << "\tÁèîãðàôèÿ: " << biography << endl;
-	cout << "\tÎñíîâíûå ïðîèçâåäåíèÿ: " << endl;
+	cout << "Ð Ð¾Ð¼Ð°Ð½Ð¸ÑÑ‚ - ";
+	cout << fio << " (" << getYears() << "); " << endl << "\tÐ‘Ð¸Ð¾Ð³Ñ€Ð°Ñ„Ð¸Ñ: " << biography << endl;
+	cout << "\tÐžÑÐ½Ð¾Ð²Ð½Ñ‹Ðµ Ð¿Ñ€Ð¾Ð¸Ð·Ð²ÐµÐ´ÐµÐ½Ð¸Ñ: " << endl;
 	for (int i = 0; i < works.size(); i++)
 		cout << "\t\t" << i + 1 << ": " << "\"" << works[i] << "\"" << endl;
 }
