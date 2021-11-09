@@ -42,3 +42,25 @@ void Poet::out() {
 	for (int i = 0; i < works.size(); i++)
 		cout << "\t\t" << i + 1 << ": " << "\"" << works[i] << "\"" << endl;
 }
+
+void Poet::change() {
+	int choice;
+	out();
+	cout << "Изменение поэта: " <<
+		"\n\t1) ФИО" << 
+		"\n\t2) Года" << 
+		"\n\t3) Известные работы" << 
+		"\n\t4) Количество псевдонимов" << endl << "Пункт для изменение: ";
+	cin >> choice;
+	if (choice >= 1 && choice <= 3)
+		changeBase(choice);
+	else if (choice == 4)
+	{
+		int buf;
+		cout << "Введите новое количество псевдонимов: ";
+		cin >> buf;
+		setAliases(buf);
+	}
+	else
+		throw exception("Неверный пункт при изменении поэта");
+}

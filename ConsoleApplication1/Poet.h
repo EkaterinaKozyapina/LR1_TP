@@ -26,6 +26,9 @@ public:
 	// Вывод в консоль
 	void out();
 
+	// Изменение объекта класса
+	void change();
+
 private:
 
 	int aliases;				// Количество псевдонимов

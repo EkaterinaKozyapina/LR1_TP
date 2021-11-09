@@ -38,3 +38,25 @@ void Novelist::out() {
 	for (int i = 0; i < works.size(); i++)
 		cout << "\t\t" << i + 1 << ": " << "\"" << works[i] << "\"" << endl;
 }
+
+void Novelist::change() {
+	int choice;
+	out();
+	cout << "Изменение романиста: " <<
+		"\n\t1) ФИО" <<
+		"\n\t2) Года" <<
+		"\n\t3) Известные работы" <<
+		"\n\t4) Биография" << endl << "Пункт для изменение: ";
+	cin >> choice;
+	if (choice >= 1 && choice <= 3)
+		changeBase(choice);
+	else if (choice == 4)
+	{
+		string buf;
+		cout << "Введите новую биографию: ";
+		cin >> buf;
+		setBiography(buf);
+	}
+	else
+		throw exception("Неверный пункт при изменении романиста");
+}

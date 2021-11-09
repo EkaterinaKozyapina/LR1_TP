@@ -54,3 +54,32 @@ string Publication::getYears() { return (to_string(yearOfBird) + "-" + to_string
 void Publication::setWorks(vector<string> works) { this->works = works; }
 
 vector<string> Publication::getWorks() { return works; }
+
+void Publication::changeBase(int choice) {
+	if (choice == 1) {
+		string buf;
+		cout << "Введите новое ФИО: ";
+		cin >> buf;
+		setFio(buf);
+	}
+	else if (choice == 2) {
+		int buf1, buf2;
+		cout << "Введите год рождения: ";
+		cin >> buf1;
+		cout << "Введите год смерти: ";
+		cin >> buf2;
+		setYears(buf1, buf2);
+	}
+	else if (choice == 3) {
+		int cnt;
+		string buf;
+		cout << "Введите номер произведения от " << 1 << "до " << works.size() << ": ";
+		cin >> cnt;
+		cout << "Введите новое произведение: ";
+		cin >> buf;
+		works[cnt - 1] = buf;
+	}
+	else {
+		throw exception("Неверный параметр для изменения базового класса");
+	}
+}

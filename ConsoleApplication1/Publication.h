@@ -5,7 +5,7 @@
 
 using namespace std;
 
-
+// Базовый абстрактный класс
 class Publication
 {
 public:
@@ -42,6 +42,12 @@ public:
 
 	// Виртуальная функция для вывода объектов
 	virtual void out() = 0;
+
+	// Виртуальная функция для изменения объектов дочерних классов
+	virtual void change() = 0;
+
+	// Изменение элементов базового класса (1 - ФИО, 2 - года, 3 - основные произведения)
+	void changeBase(int choice);
 
 protected:
 

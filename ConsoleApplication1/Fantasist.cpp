@@ -38,3 +38,25 @@ void Fantasist::out() {
 	for (int i = 0; i < works.size(); i++)
 		cout << "\t\t" << i + 1 << ": " << "\"" << works[i] << "\"" << endl;
 }
+
+void Fantasist::change() {
+	int choice;
+	out();
+	cout << "Изменение фантаста: " <<
+		"\n\t1) ФИО" <<
+		"\n\t2) Года" <<
+		"\n\t3) Известные работы" <<
+		"\n\t4) Сняты ли фильмы" << endl << "Пункт для изменение: ";
+	cin >> choice;
+	if (choice >= 1 && choice <= 3)
+		changeBase(choice);
+	else if (choice == 4)
+	{
+		bool buf;
+		cout << "Введите снимали ли фильмы по книгам: ";
+		cin >> buf;
+		setFilmExists(buf);
+	}
+	else
+		throw exception("Неверный пункт при изменении фантаста");
+}

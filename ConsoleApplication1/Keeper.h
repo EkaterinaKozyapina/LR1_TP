@@ -35,6 +35,9 @@ public:
 	// Удаление элемента с конца контейнера
 	void removeObject();
 
+	// Изменение элемента по индексу
+	void change(int index);
+
 private:
 
 	int size;						// Размер контейнера

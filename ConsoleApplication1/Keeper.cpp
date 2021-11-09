@@ -72,3 +72,9 @@ void Keeper::removeObject() {
 	delete(conteiner[index - 1]);
 	index--;
 }
+
+void Keeper::change(int index) {
+	if (index < 0 || index > this->index)
+		throw exception("Неверный индекс при изменении");
+	conteiner[index]->change();
+}

@@ -25,6 +25,9 @@ public:
 	// Вывод в консоль
 	void out();
 
+	// Изменение объекта класса
+	void change();
+
 private:
 
 	bool filmExists;			// Сняты ли фильмы по книгам
