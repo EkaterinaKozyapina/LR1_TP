@@ -24,7 +24,7 @@ public:
 	string getBiography();
 
 	// Вывод в консоль
-	void out();
+	string out();
 
 	// Изменение объекта класса
 	void change();

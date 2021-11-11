@@ -35,12 +35,18 @@ void Poet::setAliases(int aliases) {
 
 int Poet::getAliases() { return aliases; }
 
-void Poet::out() {
-	cout << "Поэт - ";
-	cout << fio << " (" << getYears() << "); " << "псевдонимы: " << aliases << endl;
+string Poet::out() {
+	string buf;
+	buf = "Поэт - " + fio + " (" + getYears() + "); " + "\n\tПсевдонимы: " + to_string(aliases) + "\n" + "\tОсновные произведения: \n";
+	for (int i = 0; i < works.size(); i++)
+		buf = buf + "\t\t" + to_string(i + 1) + ": " + "\"" + works[i] + "\"" + "\n";
+	return buf;
+
+	/*cout << "Поэт - ";
+	cout << fio << " (" << getYears() << "); " << "Псевдонимы: " << aliases << endl;
 	cout << "\tОсновные произведения: " << endl;
 	for (int i = 0; i < works.size(); i++)
-		cout << "\t\t" << i + 1 << ": " << "\"" << works[i] << "\"" << endl;
+		cout << "\t\t" << i + 1 << ": " << "\"" << works[i] << "\"" << endl;*/
 }
 
 void Poet::change() {

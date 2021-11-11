@@ -23,7 +23,7 @@ public:
 	bool getFilmExists();
 
 	// Вывод в консоль
-	void out();
+	string out();
 
 	// Изменение объекта класса
 	void change();

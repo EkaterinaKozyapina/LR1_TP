@@ -53,7 +53,7 @@ std::ostream& operator<< (std::ostream &out, const Keeper & keeper)
 		for (int i = 0; i < keeper.index; i++)
 		{
 			out << i + 1 << " ";
-			keeper.conteiner[i]->out();
+			cout << keeper.conteiner[i]->out();
 		}
 
 	return out;
@@ -64,6 +64,7 @@ void Keeper::addObject(Publication & publication) {
 		throw exception("Контейнер заполнен, добавление объекта невозможно");
 	conteiner[index] = &publication;
 	index++;
+	cout << "Элемент добавлен в контейнер" << endl;
 }
 
 void Keeper::removeObject() {
@@ -71,6 +72,7 @@ void Keeper::removeObject() {
 		throw exception("Контейнер пуст, удаление объекта невозможно");
 	delete(conteiner[index - 1]);
 	index--;
+	cout << "Элемент удален из контейнера" << endl;
 }
 
 void Keeper::change(int index) {

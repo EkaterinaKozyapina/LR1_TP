@@ -31,12 +31,18 @@ void Novelist::setBiography(string biography) { this->biography = biography; }
 
 string Novelist::getBiography() { return biography; }
 
-void Novelist::out() {
-	cout << "Романист - ";
+string Novelist::out() {
+	string buf;
+	buf = "Романист - " + fio + " (" + getYears() + "); " + "\n\tБиография: " + biography + "\n" + "\tОсновные произведения: \n";
+	for (int i = 0; i < works.size(); i++)
+		buf = buf + "\t\t" + to_string(i + 1) + ": " + "\"" + works[i] + "\"" + "\n";
+	return buf;
+
+	/*cout << "Романист - ";
 	cout << fio << " (" << getYears() << "); " << endl << "\tБиография: " << biography << endl;
 	cout << "\tОсновные произведения: " << endl;
 	for (int i = 0; i < works.size(); i++)
-		cout << "\t\t" << i + 1 << ": " << "\"" << works[i] << "\"" << endl;
+		cout << "\t\t" << i + 1 << ": " << "\"" << works[i] << "\"" << endl;*/
 }
 
 void Novelist::change() {

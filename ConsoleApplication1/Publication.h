@@ -41,7 +41,7 @@ public:
 	vector<string> getWorks();
 
 	// Виртуальная функция для вывода объектов
-	virtual void out() = 0;
+	virtual string out() = 0;
 
 	// Виртуальная функция для изменения объектов дочерних классов
 	virtual void change() = 0;

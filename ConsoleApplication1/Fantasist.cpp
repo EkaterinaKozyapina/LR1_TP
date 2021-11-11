@@ -31,12 +31,18 @@ void Fantasist::setFilmExists(bool filmExists) { this->filmExists = filmExists; 
 
 bool Fantasist::getFilmExists() { return filmExists; }
 
-void Fantasist::out() {
-	cout << "Фантаст - ";
+string Fantasist::out() {
+	string buf;
+	buf = "Фантаст - " + fio + " (" + getYears() + "); " + "\n\tСняты ли фильмы: " + ((filmExists) ? "Да" : "Нет") + "\n" + "\tОсновные произведения: \n";
+	for (int i = 0; i < works.size(); i++)
+		buf = buf + "\t\t" + to_string(i + 1) + ": " + "\"" + works[i] + "\"" + "\n";
+	return buf;
+
+	/*cout << "Фантаст - ";
 	cout << fio << " (" << getYears() << "); " << "Сняты ли фильмы: " << ((filmExists)?"Да":"Нет") << endl;
 	cout << "\tОсновные произведения: " << endl;
 	for (int i = 0; i < works.size(); i++)
-		cout << "\t\t" << i + 1 << ": " << "\"" << works[i] << "\"" << endl;
+		cout << "\t\t" << i + 1 << ": " << "\"" << works[i] << "\"" << endl;*/
 }
 
 void Fantasist::change() {
