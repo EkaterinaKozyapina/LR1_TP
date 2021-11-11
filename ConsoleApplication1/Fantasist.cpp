@@ -33,7 +33,8 @@ bool Fantasist::getFilmExists() { return filmExists; }
 
 string Fantasist::out() {
 	string buf;
-	buf = "Фантаст - " + fio + " (" + getYears() + "); " + "\n\tСняты ли фильмы: " + ((filmExists) ? "Да" : "Нет") + "\n" + "\tОсновные произведения: \n";
+	buf = "Фантаст - " + fio + " (" + getYears() + "); " + "\n\tСняты ли фильмы: " + ((filmExists) ? "Да" : "Нет") + 
+		"\n" + "\tОсновные произведения: " + to_string(works.size()) + "\n";
 	for (int i = 0; i < works.size(); i++)
 		buf = buf + "\t\t" + to_string(i + 1) + ": " + "\"" + works[i] + "\"" + "\n";
 	return buf;

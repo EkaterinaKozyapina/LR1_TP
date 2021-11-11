@@ -33,7 +33,8 @@ string Novelist::getBiography() { return biography; }
 
 string Novelist::out() {
 	string buf;
-	buf = "Романист - " + fio + " (" + getYears() + "); " + "\n\tБиография: " + biography + "\n" + "\tОсновные произведения: \n";
+	buf = "Романист - " + fio + " (" + getYears() + "); " + "\n\tБиография: " + biography + 
+		"\n" + "\tОсновные произведения: " + to_string(works.size()) + "\n";
 	for (int i = 0; i < works.size(); i++)
 		buf = buf + "\t\t" + to_string(i + 1) + ": " + "\"" + works[i] + "\"" + "\n";
 	return buf;

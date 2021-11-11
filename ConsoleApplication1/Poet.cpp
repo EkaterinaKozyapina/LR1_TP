@@ -37,7 +37,8 @@ int Poet::getAliases() { return aliases; }
 
 string Poet::out() {
 	string buf;
-	buf = "Поэт - " + fio + " (" + getYears() + "); " + "\n\tПсевдонимы: " + to_string(aliases) + "\n" + "\tОсновные произведения: \n";
+	buf = "Поэт - " + fio + " (" + getYears() + "); " + "\n\tПсевдонимы: " + to_string(aliases) +
+		"\n" + "\tОсновные произведения: " + to_string(works.size()) + "\n";
 	for (int i = 0; i < works.size(); i++)
 		buf = buf + "\t\t" + to_string(i + 1) + ": " + "\"" + works[i] + "\"" + "\n";
 	return buf;
